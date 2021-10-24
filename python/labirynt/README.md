@@ -1,4 +1,7 @@
 # labirynt
+
+póki co nie działa - do rozważenia powrót i przepisanie od nowa
+
 Notatki i pomysły:
 
 Mapa:
