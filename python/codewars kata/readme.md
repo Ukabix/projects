@@ -1,0 +1,1 @@
+# pojedyncze kata z Codewars
