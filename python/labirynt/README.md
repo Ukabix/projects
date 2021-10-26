@@ -1,5 +1,7 @@
 # labirynt
 
+pierwsze podejście do prostej gry opartej na konsoli i prostym inpucie użytkownika
+projekt z samego początku mojej zabawy z Pythonem - bardziej pokazuje samą analizę/proof of concept, jakie elementy powinny znaleźć się w programie
 póki co nie działa - do rozważenia powrót i przepisanie od nowa
 
 Notatki i pomysły:
