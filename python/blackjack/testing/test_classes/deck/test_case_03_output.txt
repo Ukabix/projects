@@ -1,0 +1,57 @@
+(venv) C:\Users\Ukabi\Documents\GitHub\projects\python\blackjack> cmd /C "c:\Users\Ukabi\Documents\GitHub\projects\python\blackjack\venv\Scripts\python.exe c:\Users\Ukabi\.vscode\extensions\ms-python.python-2021.11.1422169775\pythonFiles\lib\python\debugpy\launcher 50492 -- c:\Users\Ukabi\Documents\GitHub\projects\python\blackjack\testing\test_case_03_unitest.py "
+The deck has:  
+Nine of Hearts 
+Three of Spades
+Three of Clubs 
+Three of Hearts
+Five of Hearts
+Jack of Hearts
+King of Diamonds
+Jack of Clubs
+Eight of Spades
+Seven of Clubs
+Six of Diamonds
+Jack of Diamonds
+Four of Hearts
+Ace of Spades
+Queen of Hearts
+Seven of Hearts
+Ten of Hearts
+Eight of Clubs
+Four of Diamonds
+Four of Spades
+Four of Clubs
+Six of Clubs
+Ten of Clubs
+King of Clubs
+Ten of Spades
+Two of Spades
+Ace of Hearts
+Five of Clubs
+Jack of Spades
+Seven of Diamonds
+Nine of Diamonds
+Two of Diamonds
+Two of Hearts
+Nine of Spades
+King of Spades
+Five of Spades
+Six of Hearts
+Ace of Clubs
+Queen of Diamonds
+King of Hearts
+Ten of Diamonds
+Queen of Spades
+Nine of Clubs
+Eight of Diamonds
+Ace of Diamonds
+Three of Diamonds
+Eight of Hearts
+Seven of Spades
+Two of Clubs
+Five of Diamonds
+Six of Spades
+51
+Queen of Clubs
+
+(venv) C:\Users\Ukabi\Documents\GitHub\projects\python\blackjack>
