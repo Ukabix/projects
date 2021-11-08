@@ -82,7 +82,7 @@ class Player:
             self.all_cards.extend(new_cards)
         # single card -> new_cards is a single obj
         else:
-            self.all_cards.append()
+            self.all_cards.append(new_cards)
         # to check:
         # new_player = Player("John")
         # print(new_player) -> expect 0
@@ -103,12 +103,12 @@ class Player:
 # 3. shuffle the deck
 # 4. split the deck between players
 # playing:
-# 1. lose check for 0 cards -> game_on = False: end game, win information
+# 1. lose check for less than 5 cards -> game_on = False: end game, win information
 # 2. while game_on = True:
 # 3. each player draws
 # 4. compare cards -> card1 != card2 -> at_war = False
 # 5. while at_war = True
-# 6. players draw three additional cards, back to 4.
+# 6. players draw five additional cards, back to 4.
 # 7. add cards to winner, back to 1.
 
 # GAME SETUP
@@ -154,5 +154,35 @@ while game_on:
     player_two_cards.append(player_two.remove_one())
 
     # CARD COMPARISON
-    
+    at_war = True
+
+    while at_war:
+        if player_one_cards[-1].value > player_two_cards[-1].value:
+            player_one.add_cards(player_one_cards)
+            player_one.add_cards(player_two_cards)
+            print("Player one has won this one.")
+            at_war = False
+        elif player_two_cards[-1].value > player_one_cards[-1].value:
+            player_two.add_cards(player_one_cards)
+            player_two.add_cards(player_one_cards)
+            print("Player two has won this one.")
+            at_war = False
+        else:
+            # at_war 
+            print("WAAAGH!")
+            if len(player_one.all_cards) < 5:
+                print("Player one is unable to go to war. Player two wins!")
+                game_on = False
+                break
+            if len(player_two.all_cards) < 5:
+                print("Player two is unable to go to war. Player one wins!")
+                game_on = False
+                break
+            else:
+                for num in range(5):
+                    player_one_cards.append(player_one.remove_one())
+                    player_two_cards.append(player_two.remove_one())
+
+
+
 
