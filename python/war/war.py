@@ -5,19 +5,22 @@ import random
 # define card suits
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 # define card ranks
-ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+         'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 # define card values to compare them in game logic later
-values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
-            'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
+values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8,
+          'Nine': 9, 'Ten': 10, 'Jack': 11, 'Queen': 12, 'King': 13, 'Ace': 14}
 
 # CARD
 # must have those attributes: SUIT,RANK,VALUE
 
+
 class Card:
-    def __init__(self,suit,rank):
+    def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
-        self.value = values[rank] # recall values dictionary by key = rank
+        self.value = values[rank]  # recall values dictionary by key = rank
+
     def __str__(self):
         return self.rank + " of " + self.suit
 
@@ -30,26 +33,30 @@ class Card:
 # 3) deal cards from Deck
 # pop method from Card list
 
+
 class Deck:
     # create a list of Card objects
     def __init__(self):
-        self.all_cards = [] # create an empty list of all cards
-        
-        for suit in suits: # iterate through suits
-            for rank in ranks: # iterate through ranks
+        self.all_cards = []  # create an empty list of all cards
+
+        for suit in suits:  # iterate through suits
+            for rank in ranks:  # iterate through ranks
                 # create Card object
-                created_card = Card(suit,rank)
-                self.all_cards.append(created_card) # append created cards to Card list
+                created_card = Card(suit, rank)
+                # append created cards to Card list
+                self.all_cards.append(created_card)
         # to check if it works run
         # for card_object in new_deck.all_cards:
         #   print(card_object)
     # implement shuffling
+
     def shuffle(self):
         random.shuffle(self.all_cards)
         # to check if it works run
         # for card_object in new_deck.all_cards:
         #   print(card_object)
     # deal one card function
+
     def deal_one(self):
         return self.all_cards.pop()
         # to check if it works run
@@ -58,7 +65,7 @@ class Deck:
         # mycard = new_deck.deal_one()
         # print(mycard)
         # len(new_deck.all_cards) == 51
-    
+
 # PLAYER
 # 1) holds player's list of cards
 # 2) should be able to add or remove cards from the list of Card objects
@@ -68,15 +75,16 @@ class Deck:
 # player adds a card: append() - be default to the end of list
 # player adds multiple cards: extend(new)
 
+
 class Player:
-    def __init__(self,name):
-        self.name = name # distinguish players
-        self.all_cards = [] # create empty hand
-    
+    def __init__(self, name):
+        self.name = name  # distinguish players
+        self.all_cards = []  # create empty hand
+
     def remove_one(self):
         return self.all_cards.pop(0)
 
-    def add_cards(self,new_cards):
+    def add_cards(self, new_cards):
         # for multiple cards -> new_cards is a list
         if type(new_cards) == type([]):
             self.all_cards.extend(new_cards)
@@ -110,6 +118,7 @@ class Player:
 # 5. while at_war = True
 # 6. players draw five additional cards, back to 4.
 # 7. add cards to winner, back to 1.
+
 
 # GAME SETUP
 # create player1
@@ -145,7 +154,7 @@ while game_on:
         print("Player Two is out of cards. Player One wins!")
         game_on = False
         break
-    
+
     # START A NEW ROUND
     # select cards to play
     player_one_cards = []
@@ -168,7 +177,7 @@ while game_on:
             print("Player two has won this one.")
             at_war = False
         else:
-            # at_war 
+            # at_war
             print("WAAAGH!")
             if len(player_one.all_cards) < 5:
                 print("Player one is unable to go to war. Player two wins!")
@@ -182,7 +191,3 @@ while game_on:
                 for num in range(5):
                     player_one_cards.append(player_one.remove_one())
                     player_two_cards.append(player_two.remove_one())
-
-
-
-
