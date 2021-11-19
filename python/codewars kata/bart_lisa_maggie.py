@@ -43,4 +43,8 @@ def namelist(names):
             names += f"{name}, "
         return f"{names}{mylist[-2]} & {mylist[-1]}"
 
+print(namelist([{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'},{'name': 'Homer'},{'name': 'Marge'}]))
+print(namelist([{'name': 'Bart'},{'name': 'Lisa'},{'name': 'Maggie'}]))
+print(namelist([{'name': 'Bart'},{'name': 'Lisa'}]))
+print(namelist([{'name': 'Bart'}]))
 print(namelist([]))

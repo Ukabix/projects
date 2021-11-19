@@ -16,3 +16,11 @@
 
 --     NOTE: Your solution should use pure SQL. Ruby is used within the test cases to do the actual testing.
 
+SELECT per.id, per.name,
+COUNT (sal.sale) AS sale_count,
+RANK() OVER ( PARTITION BY per.id ORDER BY per.id DESC) AS sale_rank
+FROM people per
+INNER JOIN sales sal
+ON per.id = sal.people_id
+GROUP BY per.id
+
